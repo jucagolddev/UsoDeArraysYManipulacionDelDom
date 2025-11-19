@@ -76,6 +76,409 @@
                 }
             },
             // Agrega más ejemplos para cada método aquí siguiendo este formato.
+            // 1. at()
+            {
+                method: "1. at()",
+                description: "Accede al elemento en una posición dada, permite índices negativos.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.at(-1); // Devuelve el último elemento`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.at(-1);
+                }
+            },
+            // 2. concat()
+            {
+                method: "2. concat()",
+                description: "Combina arrays y devuelve un nuevo array sin modificar los existentes.",
+                example: `let array = [10, 20, 30, 40, 50];\nlet extra = [60, 70];\nreturn array.concat(extra);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    let extra = [60, 70];
+                    return array.concat(extra);
+                }
+            },
+            // 3. copyWithin()
+            {
+                method: "3. copyWithin()",
+                description: "Copia una parte del array dentro de sí mismo (modifica el original).",
+                example: `let array = [10, 20, 30, 40, 50];\n// Copia al índice 0 lo que hay desde el índice 3\narray.copyWithin(0, 3);\nreturn array;`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    array.copyWithin(0, 3);
+                    return array;
+                }
+            },
+            // 4. entries()
+            {
+                method: "4. entries()",
+                description: "Crea un iterador de pares [índice, valor].",
+                example: `let array = [10, 20, 30, 40, 50];\n// Convertimos el iterador a array para visualizarlo\nreturn Array.from(array.entries());`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    // Array.from es necesario para ver el contenido del iterador en el JSON final
+                    return Array.from(array.entries());
+                }
+            },
+            // 5. every()
+            {
+                method: "5. every()",
+                description: "Verifica si TODOS los elementos cumplen una condición.",
+                example: `let array = [10, 20, 30, 40, 50];\n// ¿Son todos mayores que 20?\nreturn array.every(n => n > 20);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.every(n => n > 20);
+                }
+            },
+            // 6. fill()
+            {
+                method: "6. fill()",
+                description: "Rellena el array con un valor estático desde un índice inicial hasta uno final.",
+                example: `let array = [10, 20, 30, 40, 50];\n// Rellena con 0 desde índice 1 hasta 3 (sin incluir el 3)\narray.fill(0, 1, 3);\nreturn array;`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    array.fill(0, 1, 3);
+                    return array;
+                }
+            },
+            // 7. filter()
+            {
+                method: "7. filter()",
+                description: "Crea un nuevo array con todos los elementos que cumplan la condición.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.filter(n => n > 30);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.filter(n => n > 30);
+                }
+            },
+            // 8. find()
+            {
+                method: "8. find()",
+                description: "Devuelve el primer elemento que cumpla con la condición.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.find(n => n > 30);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.find(n => n > 30);
+                }
+            },
+            // 9. findIndex()
+            {
+                method: "9. findIndex()",
+                description: "Devuelve el índice del primer elemento que cumpla la condición.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.findIndex(n => n > 30); // El 40 está en índice 3`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.findIndex(n => n > 30);
+                }
+            },
+            // 10. findLast()
+            {
+                method: "10. findLast()",
+                description: "Devuelve el último elemento que cumpla una condición (búsqueda inversa).",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.findLast(n => n > 30);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.findLast(n => n > 30);
+                }
+            },
+            // 11. findLastIndex()
+            {
+                method: "11. findLastIndex()",
+                description: "Devuelve el índice del último elemento que cumpla la condición.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.findLastIndex(n => n > 30);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.findLastIndex(n => n > 30);
+                }
+            },
+            // 12. flat()
+            {
+                method: "12. flat()",
+                description: "Aplana un array multidimensional.",
+                example: `let nested = [1, [2, [3, 4]]];\nreturn nested.flat(2);`,
+                execute: () => {
+                    let nested = [1, [2, [3, 4]]];
+                    return nested.flat(2);
+                }
+            },
+            // 13. flatMap()
+            {
+                method: "13. flatMap()",
+                description: "Mapea cada elemento usando una función y aplana el resultado en un nuevo array.",
+                example: `let duplicados = [1, 2, 3];\nreturn duplicados.flatMap(n => [n, n * 2]);`,
+                execute: () => {
+                    let duplicados = [1, 2, 3];
+                    return duplicados.flatMap(n => [n, n * 2]);
+                }
+            },
+            // 14. forEach()
+            {
+                method: "14. forEach()",
+                description: "Ejecuta una función por cada elemento. (Nota: forEach no retorna nada, aquí simulamos la salida).",
+                example: `let array = [10, 20, 30, 40, 50];\nlet log = [];\narray.forEach(n => log.push(n));\nreturn log;`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    let log = []; // Creamos un array para capturar los valores y mostrarlos
+                    array.forEach(n => log.push(n));
+                    return log;
+                }
+            },
+            // 15. includes()
+            {
+                method: "15. includes()",
+                description: "Comprueba si el array contiene un valor determinado.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.includes(40);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.includes(40);
+                }
+            },
+            // 16. indexOf()
+            {
+                method: "16. indexOf()",
+                description: "Encuentra el índice de la primera aparición de un elemento.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.indexOf(40);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.indexOf(40);
+                }
+            },
+            // 17. join()
+            {
+                method: "17. join()",
+                description: "Combina todos los elementos del array en un string separado por el delimitador especificado.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.join("-");`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.join("-");
+                }
+            },
+            // 18. keys()
+            {
+                method: "18. keys()",
+                description: "Devuelve un iterador de las claves (índices) del array.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn Array.from(array.keys());`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return Array.from(array.keys());
+                }
+            },
+            // 19. lastIndexOf()
+            {
+                method: "19. lastIndexOf()",
+                description: "Encuentra el último índice de un elemento.",
+                example: `let array = [10, 20, 30, 40, 50, 40];\nreturn array.lastIndexOf(40);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50, 40];
+                    return array.lastIndexOf(40);
+                }
+            },
+            // 20. map()
+            {
+                method: "20. map()",
+                description: "Crea un nuevo array con el resultado de llamar a una función para cada elemento.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.map(n => n * 2);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.map(n => n * 2);
+                }
+            },
+            // 21. pop()
+            {
+                method: "21. pop()",
+                description: "Elimina el último elemento y lo devuelve.",
+                example: `let array = [10, 20, 30, 40, 50];\nlet eliminado = array.pop();\nreturn { eliminado, array };`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    let eliminado = array.pop();
+                    return { eliminado: eliminado, array_resultante: array };
+                }
+            },
+            // 22. push()
+            {
+                method: "22. push()",
+                description: "Agrega uno o más elementos al final y devuelve la nueva longitud.",
+                example: `let array = [10, 20, 30, 40, 50];\narray.push(60);\nreturn array;`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    array.push(60);
+                    return array;
+                }
+            },
+            // 23. reduce()
+            {
+                method: "23. reduce()",
+                description: "Reduce el array a un único valor acumulado (de izquierda a derecha).",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.reduce((acc, n) => acc + n, 0);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.reduce((acc, n) => acc + n, 0);
+                }
+            },
+            // 24. reduceRight()
+            {
+                method: "24. reduceRight()",
+                description: "Igual que reduce, pero procesa el array de derecha a izquierda.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.reduceRight((acc, n) => acc - n, 0);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.reduceRight((acc, n) => acc - n, 0);
+                }
+            },
+            // 25. reverse()
+            {
+                method: "25. reverse()",
+                description: "Invierte el orden de los elementos del array (modifica el original).",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.reverse();`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.reverse();
+                }
+            },
+            // 26. shift()
+            {
+                method: "26. shift()",
+                description: "Elimina el primer elemento y lo devuelve.",
+                example: `let array = [10, 20, 30, 40, 50];\nlet eliminado = array.shift();\nreturn { eliminado, array };`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    let eliminado = array.shift();
+                    return { eliminado: eliminado, array_resultante: array };
+                }
+            },
+            // 27. slice()
+            {
+                method: "27. slice()",
+                description: "Devuelve una copia de una parte del array (sin modificar el original).",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.slice(1, 3);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.slice(1, 3);
+                }
+            },
+            // 28. some()
+            {
+                method: "28. some()",
+                description: "Verifica si AL MENOS un elemento cumple una condición.",
+                example: `let array = [10, 20, 30, 40, 50];\nreturn array.some(n => n > 30);`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.some(n => n > 30);
+                }
+            },
+            // 29. sort()
+            {
+                method: "29. sort()",
+                description: "Ordena los elementos del array localmente y devuelve el array ordenado.",
+                example: `let array = [10, 20, 30, 40, 50];\narray.sort((a, b) => b - a); // Descendente\nreturn array;`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    array.sort((a, b) => b - a);
+                    return array;
+                }
+            },
+            // 30. splice()
+            {
+                method: "30. splice()",
+                description: "Cambia el contenido de un array eliminando o reemplazando elementos existentes y/o agregando nuevos.",
+                example: `let array = [10, 20, 30, 40, 50];\n// Elimina 2 desde índice 1, agrega 100 y 200\narray.splice(1, 2, 100, 200);\nreturn array;`,
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    array.splice(1, 2, 100, 200);
+                    return array;
+                }
+            },
+            // 31. [@@iterator]()
+            {
+                method: "31. [@@iterator]()",
+                description: "Devuelve el iterador por defecto para los valores del array.",
+                example: `let array = [40, 100, 200, 0];\nlet iterator = array[Symbol.iterator]();\n// Mostramos valores iterados\nreturn Array.from(iterator);`,
+                execute: () => {
+                    let array = [40, 100, 200, 0];
+                    let iterator = array[Symbol.iterator]();
+                    return Array.from(iterator);
+                }
+            },
+            // 32. toLocaleString()
+            {
+                method: "32. toLocaleString()",
+                description: "Devuelve una cadena que representa los elementos del array (formato local).",
+                example: `let array = [40, 100, 200, 0];\nreturn array.toLocaleString();`,
+                execute: () => {
+                    let array = [40, 100, 200, 0];
+                    return array.toLocaleString();
+                }
+            },
+            // 33. toReversed()
+            {
+                method: "33. toReversed()",
+                description: "Versión inmutable de reverse(). Devuelve una copia invertida.",
+                example: `let array = [40, 100, 200, 0];\nreturn array.toReversed();`,
+                execute: () => {
+                    let array = [40, 100, 200, 0];
+                    return array.toReversed();
+                }
+            },
+            // 34. toSorted()
+            {
+                method: "34. toSorted()",
+                description: "Versión inmutable de sort(). Devuelve una copia ordenada.",
+                example: `let array = [40, 100, 200, 0];\nreturn array.toSorted((a,b) => a - b);`,
+                execute: () => {
+                    let array = [40, 100, 200, 0];
+                    return array.toSorted((a, b) => a - b);
+                }
+            },
+            // 35. toSpliced()
+            {
+                method: "35. toSpliced()",
+                description: "Versión inmutable de splice(). Devuelve una copia modificada.",
+                example: `let array = [40, 100, 200, 0];\nreturn array.toSpliced(1, 1, 300);`,
+                execute: () => {
+                    let array = [40, 100, 200, 0];
+                    return array.toSpliced(1, 1, 300);
+                }
+            },
+            // 36. toString()
+            {
+                method: "36. toString()",
+                description: "Devuelve una cadena de caracteres representando el array.",
+                example: `let array = [40, 100, 200, 0];\nreturn array.toString();`,
+                execute: () => {
+                    let array = [40, 100, 200, 0];
+                    return array.toString();
+                }
+            },
+            // 37. unshift()
+            {
+                method: "37. unshift()",
+                description: "Agrega uno o más elementos al inicio del array y devuelve la nueva longitud.",
+                example: `let array = [40, 100, 200, 0];\narray.unshift(10);\nreturn array;`,
+                execute: () => {
+                    let array = [40, 100, 200, 0];
+                    array.unshift(10);
+                    return array;
+                }
+            },
+            // 38. values()
+            {
+                method: "38. values()",
+                description: "Devuelve un nuevo objeto iterador de array que contiene los valores.",
+                example: `let array = [10, 40, 100, 200, 0];\nreturn Array.from(array.values());`,
+                execute: () => {
+                    let array = [10, 40, 100, 200, 0];
+                    return Array.from(array.values());
+                }
+            },
+            // 39. with()
+            {
+                method: "39. with()",
+                description: "Devuelve una copia del array reemplazando el valor en el índice dado.",
+                example: `let array = [10, 40, 100, 200, 0];\nreturn array.with(2, 500);`,
+                execute: () => {
+                    let array = [10, 40, 100, 200, 0];
+                    return array.with(2, 500);
+                }
+            }
         ];
         // Renderizando las secciones dinámicamente
         const container = document.getElementById("examples");
